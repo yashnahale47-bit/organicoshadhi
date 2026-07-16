@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GURUMAULI GREEN SANKALP - नैसर्गिक व विश्वासार्ह शेती उपयोगी उत्पादने.">
+  <meta name="theme-color" content="#0d6b3d">
+  <title>GURUMAULI GREEN SANKALP | नैसर्गिक शेतीची विश्वासार्ह साथ</title>
+  <style>
+    :root {
+      --green:#0d6b3d; --green2:#159b55; --dark:#16372a; --cream:#f5fbf3;
+      --white:#fff; --text:#26372f; --muted:#65746c; --gold:#e3ae35;
+      --shadow:0 16px 42px rgba(17,82,48,.12); --radius:22px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--cream);color:var(--text);line-height:1.65}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1140px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(13,107,61,.1)}
+    .nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;color:var(--green);font-weight:900}
+    .brand-mark{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;font-size:25px;box-shadow:0 10px 25px rgba(13,107,61,.24)}
+    .brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.8px;font-weight:700}
+    nav{display:flex;align-items:center;gap:23px;font-size:14px;font-weight:800}
+    nav a:hover{color:var(--green)}
+    .menu-btn{display:none;border:0;background:transparent;color:var(--green);font-size:28px;cursor:pointer}
+
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 85% 20%,rgba(227,174,53,.2),transparent 27%),linear-gradient(135deg,#edfaec 0%,#fbfff9 52%,#e2f4e5 100%)}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:center;min-height:680px;padding:72px 0}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--green);padding:8px 13px;border-radius:999px;font-size:13px;font-weight:900;box-shadow:0 8px 24px rgba(13,107,61,.1);margin-bottom:18px}
+    h1{font-size:clamp(42px,7vw,74px);line-height:1.04;letter-spacing:-2px;color:var(--dark)}
+    h1 span{color:var(--green)}
+    .hero p{font-size:18px;color:var(--muted);margin:23px 0 29px;max-width:660px}
+    .actions{display:flex;gap:13px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 22px;border-radius:14px;font-weight:900;border:1px solid transparent;transition:.25s}
+    .btn-primary{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;box-shadow:0 12px 28px rgba(13,107,61,.25)}
+    .btn-light{background:#fff;color:var(--green);border-color:rgba(13,107,61,.18)}
+    .btn:hover{transform:translateY(-2px)}
+    .hero-card{background:rgba(255,255,255,.88);border-radius:32px;padding:28px;box-shadow:var(--shadow)}
+    .hero-visual{height:395px;border-radius:24px;background:linear-gradient(145deg,#0d6b3d,#20aa5f);display:grid;place-items:center;position:relative;overflow:hidden}
+    .hero-visual:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 32% 20%,rgba(255,255,255,.2),transparent 27%),repeating-radial-gradient(circle at 50% 100%,transparent 0 25px,rgba(255,255,255,.06) 26px 27px)}
+    .hero-visual .plant{font-size:150px;position:relative;filter:drop-shadow(0 18px 20px rgba(0,0,0,.22))}
+    .float{position:absolute;background:#fff;color:var(--green);padding:11px 14px;border-radius:14px;font-weight:900;font-size:13px;box-shadow:0 12px 30px rgba(0,0,0,.16)}
+    .f1{left:14px;top:28px} .f2{right:14px;bottom:27px}
+
+    section{padding:84px 0}
+    .section-head{text-align:center;max-width:760px;margin:0 auto 42px}
+    .kicker{color:var(--green);font-size:12px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase}
+    h2{font-size:clamp(31px,5vw,48px);line-height:1.1;color:var(--dark);margin:10px 0 14px}
+    .section-head p{color:var(--muted)}
+
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .feature{background:#fff;border-radius:var(--radius);padding:28px;border:1px solid rgba(13,107,61,.08);box-shadow:0 10px 28px rgba(17,82,48,.07)}
+    .icon{width:55px;height:55px;border-radius:17px;background:#e8f7eb;color:var(--green);display:grid;place-items:center;font-size:27px;margin-bottom:17px}
+    .feature h3{font-size:20px;color:var(--dark);margin-bottom:7px}
+    .feature p{color:var(--muted);font-size:15px}
+
+    .products-section{background:#edf8ec}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .product{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 12px 32px rgba(17,82,48,.09);border:1px solid rgba(13,107,61,.08);transition:.25s}
+    .product:hover{transform:translateY(-6px)}
+    .product-icon{height:175px;display:grid;place-items:center;font-size:74px;background:linear-gradient(135deg,#dcf3df,#fbfffa)}
+    .product-body{padding:23px}
+    .tag{display:inline-block;background:#edf8ef;color:var(--green);padding:5px 10px;border-radius:999px;font-size:11px;font-weight:900}
+    .product h3{font-size:22px;color:var(--dark);margin-top:11px}
+    .product small{color:var(--green);font-weight:800}
+    .product p{color:var(--muted);font-size:14px;margin:12px 0 17px}
+    .text-link{color:var(--green);font-weight:900}
+
+    .about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:52px;align-items:center}
+    .about-visual{min-height:420px;border-radius:30px;background:linear-gradient(145deg,#0e6339,#1baa5e);display:grid;place-items:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .about-visual:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.22),transparent 29%)}
+    .about-visual span{font-size:145px;position:relative}
+    .about-copy p{color:var(--muted);margin:15px 0}
+    .checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+    .check{background:#fff;padding:13px 15px;border-radius:13px;color:var(--green);font-weight:900;box-shadow:0 8px 22px rgba(17,82,48,.07)}
+
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .review{background:#fff;border-radius:22px;padding:25px;box-shadow:0 10px 28px rgba(17,82,48,.07);border:1px solid rgba(13,107,61,.08)}
+    .stars{color:var(--gold);letter-spacing:3px;font-size:20px}
+    .review p{color:var(--muted);margin:11px 0}
+    .review strong{color:var(--dark)}
+    .review.placeholder{border-style:dashed;background:#fafff9}
+    .notice{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    .faq{max-width:850px;margin:auto;display:grid;gap:12px}
+    details{background:#fff;border-radius:16px;padding:17px 19px;border:1px solid rgba(13,107,61,.09);box-shadow:0 7px 22px rgba(17,82,48,.05)}
+    summary{cursor:pointer;font-weight:900;color:var(--dark)}
+    details p{color:var(--muted);padding-top:10px}
+
+    .contact-wrap{background:linear-gradient(135deg,var(--dark),var(--green));color:#fff;border-radius:32px;padding:44px;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;box-shadow:var(--shadow)}
+    .contact-wrap h2{color:#fff;margin-top:0}
+    .contact-wrap p{color:rgba(255,255,255,.8)}
+    .contact-list{display:grid;gap:12px;margin-top:22px}
+    .contact-item{background:rgba(255,255,255,.1);padding:13px 15px;border-radius:13px}
+    .contact-actions{display:grid;gap:12px;align-content:center}
+    .contact-actions .btn{background:#fff;color:var(--green)}
+    .contact-actions .btn.alt{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+
+    .legal{background:#fff;border-radius:20px;padding:24px;border:1px solid rgba(13,107,61,.08);box-shadow:0 9px 25px rgba(17,82,48,.06)}
+    .legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:17px}
+    .legal-item{background:#f4faf3;border-radius:13px;padding:14px}
+    .legal-item small{display:block;color:var(--muted)}
+    .legal-item strong{color:var(--green);word-break:break-word}
+
+    footer{background:#102f24;color:#dce9e1;padding:42px 0 22px}
+    .footer-grid{display:grid;grid-template-columns:1.3fr .7fr 1fr;gap:32px}
+    footer h3{color:#fff;margin-bottom:11px}
+    footer p,footer a,footer span{color:#b8cac0;font-size:14px}
+    .footer-links{display:grid;gap:8px}
+    .copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:29px;padding-top:19px;text-align:center;color:#9fb3a7;font-size:13px}
+
+    .wa{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;font-size:29px;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:1001}
+    .reveal{opacity:0;transform:translateY(23px);transition:.7s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    @media(max-width:900px){
+      nav{display:none;position:absolute;left:4%;right:4%;top:74px;background:#fff;padding:18px;border-radius:18px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start}
+      nav.open{display:flex} .menu-btn{display:block}
+      .hero-grid,.about-grid,.contact-wrap{grid-template-columns:1fr}
+      .features,.products,.reviews{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:540px){
+      .brand span:last-child{font-size:14px} .brand small{font-size:8px}
+      h1{font-size:44px} .hero-grid{min-height:auto;padding:52px 0}
+      .hero-visual{height:310px} .hero-visual .plant{font-size:112px}
+      section{padding:66px 0} .checks,.legal-grid{grid-template-columns:1fr}
+      .contact-wrap{padding:29px 21px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <span class="brand-mark">🌿</span>
+        <span>GURUMAULI GREEN SANKALP<small>NATURAL • TRUSTED • FARMER FIRST</small></span>
+      </a>
+      <nav id="navMenu">
+        <a href="#home">मुख्यपृष्ठ</a>
+        <a href="#products">उत्पादने</a>
+        <a href="#about">आमच्याबद्दल</a>
+        <a href="#reviews">अभिप्राय</a>
+        <a href="#contact">संपर्क</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">🌱 नैसर्गिक शेतीसाठी विश्वासार्ह साथ</div>
+          <h1>निसर्गाची शक्ती,<br><span>शेतीच्या प्रगतीसाठी.</span></h1>
+          <p>GURUMAULI GREEN SANKALP कडून नैसर्गिक आणि जैविक शेती उपयोगी उत्पादने. किंमत, पॅकिंग आणि उपलब्धता जाणून घेण्यासाठी थेट WhatsApp वर संपर्क करा.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#products">उत्पादने पहा →</a>
+            <a class="btn btn-light" href="https://wa.me/917666078027?text=नमस्कार%2C%20मला%20GURUMAULI%20GREEN%20SANKALP%20उत्पादनांबद्दल%20माहिती%20हवी%20आहे." target="_blank" rel="noopener">WhatsApp ऑर्डर</a>
+          </div>
+        </div>
+        <div class="hero-card reveal">
+          <div class="hero-visual">
+            <div class="float f1">✓ Natural Approach</div>
+            <div class="plant">🌱</div>
+            <div class="float f2">✓ Farmer Focused</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker">Why Choose Us</div>
+          <h2>विश्वास, गुणवत्ता आणि शेतकरी-केंद्रित सेवा</h2>
+          <p>उत्पादनांची माहिती स्पष्टपणे देणे आणि WhatsApp द्वारे थेट संपर्क उपलब्ध ठेवणे हे आमचे प्राधान्य.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal"><div class="icon">🍃</div><h3>नैसर्गिक दृष्टीकोन</h3><p>जबाबदार आणि पर्यावरणपूरक शेतीला प्राधान्य.</p></article>
+          <article class="feature reveal"><div class="icon">🛡️</div><h3>गुणवत्तेवर भर</h3><p>उत्पादन माहिती, पॅकिंग आणि उपलब्धता स्पष्टपणे सांगण्याचा प्रयत्न.</p></article>
+          <article class="feature reveal"><div class="icon">🤝</div><h3>थेट संपर्क</h3><p>ऑर्डर आणि चौकशीसाठी दोन WhatsApp क्रमांक उपलब्ध.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker">Our Products</div>
+          <h2>आमची सध्याची उत्पादन श्रेणी</h2>
+          <p>किंमती आणि पॅकिंग अद्याप निश्चित नसल्यामुळे प्रत्येक उत्पादनासाठी “Price on request” दाखवले आहे. नावे किंवा माहिती पुढे सहज बदलता येतील.</p>
+        </div>
+        <div class="products">
+          
+    <article class="product reveal">
+      <div class="product-icon">🌿</div>
+      <div class="product-body">
+        <span class="tag">Price on request</span>
+        <h3>दशपर्णी अर्क</h3>
+        <small>Dashparni Ark</small>
+        <p>नैसर्गिक शेतीमध्ये वापरले जाणारे वनस्पती-आधारित पारंपरिक उत्पादन.</p>
+        <a class="text-link" href="https://wa.me/917666078027?text=नमस्कार, मला दशपर्णी अर्क या उत्पादनाबद्दल माहिती आणि उपलब्धता जाणून घ्यायची आहे." target="_blank" rel="noopener">WhatsApp वर माहिती घ्या →</a>
+      </div>
+    </article>
+    
+
+    <article class="product reveal">
+      <div class="product-icon">🌾</div>
+      <div class="product-body">
+        <span class="tag">Price on request</span>
+        <h3>ब्रह्मास्त्र</h3>
+        <small>Bramhastr</small>
+        <p>शेती उपयोगासाठी तयार केलेले नैसर्गिक घटकांवर आधारित उत्पादन.</p>
+        <a class="text-link" href="https://wa.me/917666078027?text=नमस्कार, मला ब्रह्मास्त्र या उत्पादनाबद्दल माहिती आणि उपलब्धता जाणून घ्यायची आहे." target="_blank" rel="noopener">WhatsApp वर माहिती घ्या →</a>
+      </div>
+    </article>
+    
+
+    <article class="product reveal">
+      <div class="product-icon">🔥</div>
+      <div class="product-body">
+        <span class="tag">Price on request</span>
+        <h3>अग्निअस्त्र</h3>
+        <small>Agniastra</small>
+        <p>नैसर्गिक शेती पद्धतींसाठी वापरले जाणारे पारंपरिक उत्पादन.</p>
+        <a class="text-link" href="https://wa.me/917666078027?text=नमस्कार, मला अग्निअस्त्र या उत्पादनाबद्दल माहिती आणि उपलब्धता जाणून घ्यायची आहे." target="_blank" rel="noopener">WhatsApp वर माहिती घ्या →</a>
+      </div>
+    </article>
+    
+
+    <article class="product reveal">
+      <div class="product-icon">🍃</div>
+      <div class="product-body">
+        <span class="tag">Price on request</span>
+        <h3>निमास्त्र</h3>
+        <small>Nimastr</small>
+        <p>निंबावर आधारित नैसर्गिक शेती उपयोगी उत्पादन.</p>
+        <a class="text-link" href="https://wa.me/917666078027?text=नमस्कार, मला निमास्त्र या उत्पादनाबद्दल माहिती आणि उपलब्धता जाणून घ्यायची आहे." target="_blank" rel="noopener">WhatsApp वर माहिती घ्या →</a>
+      </div>
+    </article>
+    
+
+    <article class="product reveal">
+      <div class="product-icon">🧫</div>
+      <div class="product-body">
+        <span class="tag">Price on request</span>
+        <h3>ट्रायकोडर्मा</h3>
+        <small>Trichoderma</small>
+        <p>शेतीमध्ये वापरले जाणारे जैविक घटकांवर आधारित उत्पादन.</p>
+        <a class="text-link" href="https://wa.me/917666078027?text=नमस्कार, मला ट्रायकोडर्मा या उत्पादनाबद्दल माहिती आणि उपलब्धता जाणून घ्यायची आहे." target="_blank" rel="noopener">WhatsApp वर माहिती घ्या →</a>
+      </div>
+    </article>
+    
+
+    <article class="product reveal">
+      <div class="product-icon">🌱</div>
+      <div class="product-body">
+        <span class="tag">Price on request</span>
+        <h3>ह्युमिक</h3>
+        <small>Humic</small>
+        <p>माती व पिक व्यवस्थापनासाठी वापरले जाणारे शेती उपयोगी उत्पादन.</p>
+        <a class="text-link" href="https://wa.me/917666078027?text=नमस्कार, मला ह्युमिक या उत्पादनाबद्दल माहिती आणि उपलब्धता जाणून घ्यायची आहे." target="_blank" rel="noopener">WhatsApp वर माहिती घ्या →</a>
+      </div>
+    </article>
+    
+
+    <article class="product reveal">
+      <div class="product-icon">🛡️</div>
+      <div class="product-body">
+        <span class="tag">Price on request</span>
+        <h3>रामबाण</h3>
+        <small>Ramban</small>
+        <p>उत्पादनाची अंतिम माहिती, पॅकिंग आणि किंमत लवकरच जाहीर केली जाईल.</p>
+        <a class="text-link" href="https://wa.me/917666078027?text=नमस्कार, मला रामबाण या उत्पादनाबद्दल माहिती आणि उपलब्धता जाणून घ्यायची आहे." target="_blank" rel="noopener">WhatsApp वर माहिती घ्या →</a>
+      </div>
+    </article>
+    
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-visual reveal"><span>🌳</span></div>
+        <div class="about-copy reveal">
+          <div class="kicker">About Us</div>
+          <h2>GURUMAULI GREEN SANKALP</h2>
+          <p>शेतकऱ्यांसाठी नैसर्गिक, जैविक आणि विश्वासार्ह शेती उपयोगी उत्पादने उपलब्ध करून देण्याच्या उद्देशाने आमचा व्यवसाय कार्यरत आहे.</p>
+          <p>उत्पादनांची अंतिम किंमत, पॅकिंग, वापर पद्धत आणि उपलब्धता ग्राहकांना WhatsApp किंवा फोनद्वारे कळवली जाईल.</p>
+          <div class="checks">
+            <div class="check">✓ WhatsApp ऑर्डर</div>
+            <div class="check">✓ थेट ग्राहक सहाय्य</div>
+            <div class="check">✓ पारदर्शक माहिती</div>
+            <div class="check">✓ नोंदणीकृत व्यवसाय</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker">Customer Reviews</div>
+          <h2>ग्राहकांचे अभिप्राय</h2>
+          <p>आम्ही खोटे किंवा बनावट reviews दाखवत नाही. सत्यापित ग्राहकांचे अभिप्राय मिळाल्यानंतर ते येथे जोडले जातील.</p>
+        </div>
+        <div class="reviews">
+          <article class="review placeholder reveal"><div class="stars">★★★★★</div><p>तुमचा पहिला सत्यापित ग्राहक अभिप्राय येथे दिसेल.</p><strong>Verified Customer Review</strong></article>
+          <article class="review placeholder reveal"><div class="stars">★★★★★</div><p>उत्पादन वापराचा अनुभव WhatsApp वर पाठवा.</p><strong>Review Coming Soon</strong></article>
+          <article class="review placeholder reveal"><div class="stars">★★★★★</div><p>अभिप्राय ग्राहकाच्या परवानगीनेच वेबसाइटवर प्रकाशित केला जाईल.</p><strong>Permission Based</strong></article>
+        </div>
+        <p class="notice"><a class="text-link" href="https://wa.me/918767614501?text=नमस्कार%2C%20मला%20GURUMAULI%20GREEN%20SANKALP%20साठी%20माझा%20अभिप्राय%20पाठवायचा%20आहे." target="_blank" rel="noopener">आपला अभिप्राय WhatsApp वर पाठवा →</a></p>
+      </div>
+    </section>
+
+    <section class="products-section">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker">FAQ</div><h2>वारंवार विचारले जाणारे प्रश्न</h2></div>
+        <div class="faq reveal">
+          <details><summary>ऑर्डर कशी करायची?</summary><p>उत्पादनाच्या “WhatsApp वर माहिती घ्या” बटणावर क्लिक करा किंवा खालील दोन्ही WhatsApp क्रमांकांपैकी कोणत्याही क्रमांकावर संदेश पाठवा.</p></details>
+          <details><summary>उत्पादनांची किंमत कुठे दिसेल?</summary><p>सध्या किंमती निश्चित नाहीत. उपलब्ध किंमत आणि पॅकिंग WhatsApp वर कळवले जाईल.</p></details>
+          <details><summary>उत्पादन कसे वापरायचे?</summary><p>वापर पद्धत उत्पादनाच्या अंतिम लेबलनुसार आणि पिकाच्या परिस्थितीनुसार कळवली जाईल. अंदाजाने वापर करू नका.</p></details>
+          <details><summary>डिलिव्हरी उपलब्ध आहे का?</summary><p>डिलिव्हरी क्षेत्र आणि खर्च ऑर्डरच्या वेळी WhatsApp वर निश्चित केला जाईल.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-wrap reveal">
+          <div>
+            <div class="kicker" style="color:#bce8ca">Contact & Order</div>
+            <h2>ऑर्डर किंवा माहितीसाठी संपर्क करा</h2>
+            <p>सर्व ऑर्डर सध्या WhatsApp द्वारे स्वीकारल्या जातील.</p>
+            <div class="contact-list">
+              <div class="contact-item"><strong>📧 Gmail:</strong> <a href="mailto:yashnahale47@gmail.com">yashnahale47@gmail.com</a></div>
+              <div class="contact-item"><strong>📍 पत्ता:</strong> At Post Pathrad Gole, Tq. Ner, Dist. Yavatmal, Maharashtra</div>
+              <div class="contact-item"><strong>📱 WhatsApp:</strong> 7666078027 / 8767614501</div>
+            </div>
+          </div>
+          <div class="contact-actions">
+            <a class="btn" href="https://wa.me/917666078027?text=नमस्कार%2C%20मला%20उत्पादनाची%20ऑर्डर%20करायची%20आहे." target="_blank" rel="noopener">WhatsApp 1 — 7666078027</a>
+            <a class="btn" href="https://wa.me/918767614501?text=नमस्कार%2C%20मला%20उत्पादनाची%20ऑर्डर%20करायची%20आहे." target="_blank" rel="noopener">WhatsApp 2 — 8767614501</a>
+            <a class="btn alt" href="mailto:yashnahale47@gmail.com?subject=GURUMAULI%20GREEN%20SANKALP%20Enquiry">Gmail करा</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="legal reveal">
+          <div class="kicker">Business Registration</div>
+          <h2 style="font-size:32px">नोंदणी माहिती</h2>
+          <div class="legal-grid">
+            <div class="legal-item"><small>Udyam Registration Number</small><strong>UDYAM-MH-36-0101342</strong></div>
+            <div class="legal-item"><small>Shop Act Number</small><strong>106070432603</strong></div>
+          </div>
+          <p class="notice">सूचना: उत्पादनांचे फायदे, मात्रा आणि वापर पद्धती अंतिम लेबल व लागू नियमांनुसारच प्रकाशित करा. अप्रमाणित आरोग्य किंवा कीडनाशक दावे वेबसाइटवर टाकू नका.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="wa" href="https://wa.me/917666078027?text=नमस्कार%2C%20मला%20GURUMAULI%20GREEN%20SANKALP%20उत्पादनांबद्दल%20माहिती%20हवी%20आहे." target="_blank" rel="noopener" aria-label="WhatsApp">☏</a>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div><h3>🌿 GURUMAULI GREEN SANKALP</h3><p>नैसर्गिक शेतीची विश्वासार्ह साथ.</p></div>
+        <div><h3>जलद दुवे</h3><div class="footer-links"><a href="#products">उत्पादने</a><a href="#about">आमच्याबद्दल</a><a href="#reviews">अभिप्राय</a><a href="#contact">संपर्क</a></div></div>
+        <div><h3>संपर्क</h3><div class="footer-links"><a href="mailto:yashnahale47@gmail.com">yashnahale47@gmail.com</a><a href="https://wa.me/917666078027" target="_blank">7666078027</a><a href="https://wa.me/918767614501" target="_blank">8767614501</a><span>At Post Pathrad Gole, Tq. Ner, Dist. Yavatmal, Maharashtra</span></div></div>
+      </div>
+      <div class="copyright">© <span id="year"></span> GURUMAULI GREEN SANKALP. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const navMenu=document.getElementById('navMenu');
+    menuBtn.addEventListener('click',()=>navMenu.classList.toggle('open'));
+    navMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navMenu.classList.remove('open')));
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('show')}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
